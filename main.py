@@ -30,6 +30,7 @@ field = [[0 for i in range(W)] for j in range(H)]
 anim_count, anim_speed, anim_limit = 0, 60, 2000
 
 bg = pygame.image.load('./bg1.jpg').convert()
+bg = pygame.transform.scale(bg, RES)
 game_bg = pygame.image.load('./bg2.jpg').convert()
 
 main_font = pygame.font.Font(None, 65)
