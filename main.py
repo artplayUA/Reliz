@@ -2,7 +2,7 @@ import pygame
 from copy import deepcopy
 from random import choice, randrange
 
-W, H = 10, 20
+W, H = 10, 17
 TILE = 45
 GAME_RES = W * TILE, H * TILE
 RES = 750, 940
@@ -29,11 +29,11 @@ field = [[0 for i in range(W)] for j in range(H)]
 
 anim_count, anim_speed, anim_limit = 0, 60, 2000
 
-bg = pygame.image.load('img/bg.jpg').convert()
-game_bg = pygame.image.load('img/bg2.jpg').convert()
+bg = pygame.image.load('./bg1.jpg').convert()
+game_bg = pygame.image.load('./bg2.jpg').convert()
 
-main_font = pygame.font.Font('font/font.ttf', 65)
-font = pygame.font.Font('font/font.ttf', 45)
+main_font = pygame.font.Font(None, 65)
+font = pygame.font.Font(None, 45)
 
 title_tetris = main_font.render('TETRIS', True, pygame.Color('darkorange'))
 title_score = font.render('score:', True, pygame.Color('green'))
@@ -177,6 +177,8 @@ while True:
                 sc.blit(game_sc, (20, 20))
                 pygame.display.flip()
                 clock.tick(200)
+    
+    pygame.display.update()
 
     pygame.display.flip()
     clock.tick(FPS)
